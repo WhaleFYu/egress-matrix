@@ -169,6 +169,27 @@ python3 egress_matrix.py --hosts api.deepseek.com,pypi.org # 只测你关心的�
 
 `verdict` 是**推断**，`connect`/`http`/`bytes`/`body` 才是观测。两者都输出，是为了让人能不同意我的推断。
 
+## 判决表（含两个被自己的分类器坑过的例子）
+
+| verdict | 判据 | 意味着什么 |
+|---|---|---|
+| `PROXY-POLICY-DENY` | CONNECT 403/407 | 策略拒绝，换域名/重试无用 |
+| `HANG-IN-TUNNEL` | CONNECT 200，隧道内无任何字节 | 失败在隧道内部，别当成上游限流 |
+| `RELAY-5XX` | 502/503/504 且 body 是出口自己的话术（`Upstream fetch failed`） | 失败在「出口 → 源站」这一段：既不是源站回错，也不是策略拒绝 |
+| `EMPTY-REPLY` | 403/404 且 body 恰好 0 字节 | 更像中间层合成的礼貌拒绝 |
+| `CAP-THROTTLED` | 多个**不同**主机返回逐字节相同的报文 | 中间层在回话（全局限额），此时任何可达性结论都无效 |
+| `STUB-FAKE-OK` | 200 且 body ≤8 字节、不是 JSON | 假成功：只看状态码的 agent 会把它当有效响应 |
+| `REACHABLE` | 隧道放行且拿到真实 HTTP 响应（4xx 也算） | 只代表这一轮、这条出口 |
+
+**更正记录（2026-11-25，同一天两次）**
+
+1. `results/proxy-matrix.json`（12:07 CST）当初被记成 45 个 `REACHABLE`。真相是那 45 个响应互为*逐字节相同*的
+   45 字节报文 `Experiment web download traffic cap reached.` —— 旧的分类器没看 body。现在 `INDEX.md` 的判决
+   一律用当前分类器对**存下来的原始观测**重算，所以那一轮如实显示为 45 个 `CAP-THROTTLED`。
+   这也是保留原始观测（而不只保留结论）的理由：分类器会错，观测不会。
+2. 新加 `RELAY-5XX`：`api.openai.com` 曾以一个 502 + `Upstream fetch failed: Cannot connect to host ...` 的响应
+   被判成 `REACHABLE`（"拿到状态码就算通"）。那其实是出口在说"我到不了源站"。现在单列。
+
 ## 为什么不直接看 CONNECT 状态码就完事
 
 ```python

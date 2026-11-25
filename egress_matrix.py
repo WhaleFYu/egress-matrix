@@ -189,6 +189,13 @@ def verdict(row):
         return "EMPTY-REPLY"
     if h.get("status") and isinstance(b, int) and 0 < b <= 8 and "json" not in (h.get("ctype") or ""):
         return "STUB-FAKE-OK"
+    # 502/503/504 且 body 是中间层自己写的话术（如 "Upstream fetch failed"）——
+    # 失败发生在「出口 → 源站」这一段，既不是源站回了错，也不是策略拒绝了这次请求。
+    # 以前这类会被算成 REACHABLE（"拿到状态码就算通"），把中间层的故障记成了端点的可用。
+    if h.get("status") in (502, 503, 504):
+        body = (h.get("preview") or "").lower()
+        if any(k in body for k in ("upstream fetch failed", "cannot connect to", "bad gateway", "proxy error")):
+            return "RELAY-5XX"
     if h.get("status"):
         return "REACHABLE"
     # 走到这里：隧道建起来了（CONNECT 200）、但 HTTP 没有回状态码。

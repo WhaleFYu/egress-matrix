@@ -1,0 +1,1530 @@
+{
+ "generated_at": "2026-11-25T17:52:44+0800",
+ "proxy": "http://127.0.0.1:18081",
+ "host": "hcss-ecs-cada",
+ "rows": [
+  {
+   "host": "api.openai.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "22d76cdf2042697a"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6159
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "api.anthropic.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "0e1a5b227266850a"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "application/json",
+    "bytes": 82,
+    "preview": "{\n  \"error\": {\n    \"type\": \"forbidden\",\n    \"message\": \"Requ",
+    "ms": 830
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "generativelanguage.googleapis.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "bb7823cfc6e73f17"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6052
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "api.deepseek.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "dfd386a86b7ff44b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 401,
+    "ctype": "application/json",
+    "bytes": 183,
+    "preview": "{\"error\":{\"message\":\"Authentication Fails (missing key) (req",
+    "ms": 242
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "dashscope.aliyuncs.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "b6897e79c6437db7"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 192
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "open.bigmodel.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "fede8e6f2cc94241"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4096,
+    "preview": "<!doctype html><html lang=\"zh-cn\"><head><meta charset=\"utf-8",
+    "ms": 229
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.moonshot.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "4757aae24c6b0fb6"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 112,
+    "preview": "{\"message\":\"Welcome to the Moonshot API! Documentation is av",
+    "ms": 254
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "ark.cn-beijing.volces.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "134d55aade65e36b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 401,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 210,
+    "preview": "{\"error\":{\"code\":\"AuthenticationError\",\"message\":\"the API ke",
+    "ms": 188
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.siliconflow.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "9065bd65376e3c7b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 9,
+    "preview": "Not Found",
+    "ms": 199
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.minimax.chat",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "dbf420730cc83b94"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8",
+    "ms": 428
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "qianfan.baidubce.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "9176ead7fa7c7b8f"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 110,
+    "preview": "{\"message\":\"Resource not found.\",\"code\":\"ResourceNotFound\",\"",
+    "ms": 116
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "aip.baidubce.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "8c441651519a5fa7"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 0,
+    "preview": "",
+    "ms": 131
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "api.hunyuan.cloud.tencent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "8600067e75b7a1a6"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 149
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "api.together.xyz",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "fb22c1b0facfb85b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "text/html; charset=UTF-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 old",
+    "ms": 690
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.groq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "b95b2c3b67e58b84"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "application/json",
+    "bytes": 33,
+    "preview": "{\"error\":{\"message\":\"Forbidden\"}}",
+    "ms": 694
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.mistral.ai",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 403 Forbidden",
+    "err": null
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "RuntimeError: CONNECT HTTP/1.1 403 Forbidden"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "ms": 41
+   },
+   "verdict": "PROXY-POLICY-DENY"
+  },
+  {
+   "host": "openrouter.ai",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "0576bdf653ff1efe"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html data-dpl-id=\"dpl_72RGRCPZvEzveE31x6ZTMz",
+    "ms": 783
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.cohere.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "8d5fd8d93659da4f"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "text/html; charset=UTF-8",
+    "bytes": 134,
+    "preview": "<!doctype html><meta charset=\"utf-8\"><meta name=viewport con",
+    "ms": 1037
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.replicate.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "254e5867b53a6ede"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 3,
+    "preview": "{}\n",
+    "ms": 709
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "huggingface.co",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "3afab1b7c7022152"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6049
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "inference.ai.azure.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 403 Forbidden",
+    "err": null
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "RuntimeError: CONNECT HTTP/1.1 403 Forbidden"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "ms": 173
+   },
+   "verdict": "PROXY-POLICY-DENY"
+  },
+  {
+   "host": "pypi.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "6b766bd0b5442334"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n  <head>\n    <met",
+    "ms": 388
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "files.pythonhosted.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "282d73eabc95361c"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/plain; charset=UTF-8",
+    "bytes": 10,
+    "preview": "Not found.",
+    "ms": 897
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "registry.npmjs.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "4570a13c988a9025"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 2,
+    "preview": "{}",
+    "ms": 899
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "crates.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "8c6a6b540c353803"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 712
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "proxy.golang.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "e6eb07051a923a93"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6038
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "repo.maven.apache.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "7c2ade8c602994bd"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 308,
+    "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/ht",
+    "ms": 713
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "registry-1.docker.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "4b04954edeeb3862"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6097
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "ghcr.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "63eec697f1c44dee"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "\n\n\n\n\n\n\n\n<!DOCTYPE html>\n<html\n  lang=\"en\"\n  data-color-mode=",
+    "ms": 2021
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "cdn.jsdelivr.net",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "fc4ed170c3491510"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html> <html lang=\"en\"><head><meta charset=\"utf-8\">",
+    "ms": 1603
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "unpkg.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "b26a0ce0182577fd"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"en\" class=\"bg-paper dark:bg-dark-",
+    "ms": 770
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "storage.googleapis.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "dda01568b71c321b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 400,
+    "ctype": "application/xml; charset=UTF-8",
+    "bytes": 181,
+    "preview": "<?xml version='1.0' encoding='UTF-8'?><Error><Code>MissingSe",
+    "ms": 691
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "s3.amazonaws.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "4cb25da30a5c5b0c"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html>\n<html lang=\"en-US\" data-static-assets=\"https",
+    "ms": 1957
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "github.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "293788504c219541"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "\n\n\n\n\n\n\n\n<!DOCTYPE html>\n<html\n  lang=\"en\"\n  \n  data-color-mo",
+    "ms": 245
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.github.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "1815a07657a7e1ed"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 2396,
+    "preview": "{\n  \"current_user_url\": \"https://api.github.com/user\",\n  \"cu",
+    "ms": 340
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "raw.githubusercontent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "bf9404c4232bb52b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6036
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "objects.githubusercontent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "d9080dae8ccc0a2d"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 425,
+    "preview": "\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLI",
+    "ms": 673
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "gitlab.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "2e614e0f700fbb23"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6797
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "gitee.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "9598fcbab7b809f6"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"zh-CN\" class=\"\"><head><meta charS",
+    "ms": 151
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "dev.to",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "b16894bae880b0e5"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=",
+    "ms": 1642
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "hashnode.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "8ff3400b6130a050"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html data-dpl-id=\"dpl_A8fJopqbs8LEbrcM3bzhX3",
+    "ms": 662
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "juejin.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "4bdd0429e99c603d"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html>\n<html data-n-head-ssr lang=\"zh\" data-n-head=",
+    "ms": 306
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "cnblogs.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "412442f090eaa9e9"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"zh-cn\">\n<head>\n    <meta charset",
+    "ms": 344
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "ifdian.net",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "ed022aa1723dca0d"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html><html lang=\"zh-CN\"><head><script id=\"web-atn-",
+    "ms": 114
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.telegram.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "eea377fa25a90f19"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6075
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "smtp.qq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "31f5588d71624c36"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6058
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  },
+  {
+   "host": "imap.qq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "b6fa649ba9a8835d"
+    },
+    "err": null
+   },
+   "http": {
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 6082
+   },
+   "verdict": "HANG-IN-TUNNEL"
+  }
+ ]
+}
