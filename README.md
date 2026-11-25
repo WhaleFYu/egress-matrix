@@ -19,12 +19,83 @@
 | 观测 | 结果 |
 |---|---|
 | 裸 DNS（不走代理） | `gaierror: Temporary failure in name resolution` —— 直连路径没有解析器，不带代理等于什么都没测 |
-| CONNECT 被 403 的端点（12:07 那轮） | **2 / 47**：`api.openai.com`、`inference.ai.azure.com` |
+| CONNECT 被 403 的端点（12:07 那轮） | **2 / 47**：`api.openai.com`、`inference.ai.azure.com`（14:42 复测只剩 1 个） |
 | 同一端点 18 分钟后复测（12:25） | `api.openai.com` 变成 **200**，`inference.ai.azure.com` 仍是 403 —— **策略是会变的** |
 | CONNECT 被 200 放行的端点 | **45 / 47**，包括 `api.anthropic.com`、`huggingface.co`、`api.telegram.org`、`smtp.qq.com` |
 | TLS issuer | `CN = Local Network Proxy CA, O = Local Network`（且证书链**验证通过**，因为该 CA 在系统信任库里） |
 | 隧道内 HTTP | 全部 `429 / text/plain / 45 bytes / "Experiment web download traffic cap reached."` |
 
+
+## 全表：47 个端点，2026-11-25 14:42 UTC+8 一轮实测
+
+同一份数据：[`results/matrix-20261125-1442.json`](results/matrix-20261125-1442.json)。
+判据是 `CONNECT` 是否放行 + 隧道内 GET 的实际响应；`ms` 是这一轮的墙钟耗时，不是基准值。
+
+| host | verdict | HTTP | ms | note |
+|---|---|---|---|---|
+| `ifdian.net` | REACHABLE | 200 | 95 |  |
+| `qianfan.baidubce.com` | REACHABLE | 404 | 124 | 端点正常回错（未带凭据 / 路径不存在） |
+| `open.bigmodel.cn` | REACHABLE | 200 | 163 |  |
+| `ark.cn-beijing.volces.com` | REACHABLE | 401 | 179 | 端点正常回错（未带凭据 / 路径不存在） |
+| `gitee.com` | REACHABLE | 200 | 192 |  |
+| `api.siliconflow.cn` | REACHABLE | 404 | 241 | 端点正常回错（未带凭据 / 路径不存在） |
+| `api.moonshot.cn` | REACHABLE | 200 | 263 |  |
+| `api.github.com` | REACHABLE | 200 | 339 |  |
+| `cnblogs.com` | REACHABLE | 200 | 376 |  |
+| `files.pythonhosted.org` | REACHABLE | 404 | 397 | 端点正常回错（未带凭据 / 路径不存在） |
+| `juejin.cn` | REACHABLE | 200 | 435 |  |
+| `api.groq.com` | REACHABLE | 403 | 676 | 端点正常回错（未带凭据 / 路径不存在） |
+| `repo.maven.apache.org` | REACHABLE | 200 | 679 |  |
+| `api.together.xyz` | REACHABLE | 403 | 680 | 端点正常回错（未带凭据 / 路径不存在） |
+| `storage.googleapis.com` | REACHABLE | 400 | 726 | 端点正常回错（未带凭据 / 路径不存在） |
+| `api.replicate.com` | REACHABLE | 200 | 763 |  |
+| `api.minimax.chat` | REACHABLE | 200 | 767 |  |
+| `registry.npmjs.org` | REACHABLE | 200 | 862 |  |
+| `api.deepseek.com` | REACHABLE | 401 | 904 | 端点正常回错（未带凭据 / 路径不存在） |
+| `unpkg.com` | REACHABLE | 200 | 908 |  |
+| `api.anthropic.com` | REACHABLE | 403 | 980 | 端点正常回错（未带凭据 / 路径不存在） |
+| `objects.githubusercontent.com` | REACHABLE | 404 | 1021 | 端点正常回错（未带凭据 / 路径不存在） |
+| `openrouter.ai` | REACHABLE | 200 | 1223 |  |
+| `raw.githubusercontent.com` | REACHABLE | 200 | 1317 |  |
+| `api.cohere.com` | REACHABLE | 403 | 1323 | 端点正常回错（未带凭据 / 路径不存在） |
+| `pypi.org` | REACHABLE | 200 | 1403 |  |
+| `dev.to` | REACHABLE | 200 | 1721 |  |
+| `ghcr.io` | REACHABLE | 200 | 1939 |  |
+| `cdn.jsdelivr.net` | REACHABLE | 200 | 2387 |  |
+| `hashnode.com` | REACHABLE | 200 | 4225 |  |
+| `s3.amazonaws.com` | REACHABLE | 200 | 4595 |  |
+| `aip.baidubce.com` | EMPTY-REPLY | 403 | 107 | 403/404 且 body 为 0 字节——正常端点不会这么回，可能在中间层被合成 |
+| `dashscope.aliyuncs.com` | EMPTY-REPLY | 404 | 171 | 403/404 且 body 为 0 字节——正常端点不会这么回，可能在中间层被合成 |
+| `api.hunyuan.cloud.tencent.com` | EMPTY-REPLY | 404 | 426 | 403/404 且 body 为 0 字节——正常端点不会这么回，可能在中间层被合成 |
+| `crates.io` | EMPTY-REPLY | 404 | 538 | 403/404 且 body 为 0 字节——正常端点不会这么回，可能在中间层被合成 |
+| `inference.ai.azure.com` | PROXY-POLICY-DENY | — | 169 |  |
+| `smtp.qq.com` | HANG-IN-TUNNEL | — | 6033 | 隧道通了，+6s 无响应（该主机本来就不提供 :443 HTTPS，此结论不代表它不可用） |
+| `api.telegram.org` | HANG-IN-TUNNEL | — | 6038 | 隧道通了，+6s 无响应 |
+| `huggingface.co` | HANG-IN-TUNNEL | — | 6040 | 隧道通了，+6s 无响应 |
+| `imap.qq.com` | HANG-IN-TUNNEL | — | 6041 | 隧道通了，+6s 无响应（该主机本来就不提供 :443 HTTPS，此结论不代表它不可用） |
+| `api.mistral.ai` | HANG-IN-TUNNEL | — | 6045 | 隧道通了，+6s 无响应 |
+| `registry-1.docker.io` | HANG-IN-TUNNEL | — | 6049 | 隧道通了，+6s 无响应 |
+| `proxy.golang.org` | HANG-IN-TUNNEL | — | 6050 | 隧道通了，+6s 无响应 |
+| `github.com` | HANG-IN-TUNNEL | — | 6063 | 隧道通了，+6s 无响应 |
+| `generativelanguage.googleapis.com` | HANG-IN-TUNNEL | — | 6068 | 隧道通了，+6s 无响应 |
+| `api.openai.com` | HANG-IN-TUNNEL | — | 6148 | 隧道通了，+6s 无响应 |
+| `gitlab.com` | HANG-IN-TUNNEL | — | 7664 | 隧道通了，+6s 无响应 |
+
+几件从表里读出来的事（比表本身重要）：
+
+- **`PROXY-POLICY-DENY` 只剩 1 个**（`inference.ai.azure.com`）。同一份名单在 12:07 那轮是 2 个，
+  18 分钟后 `api.openai.com` 从 403 变成"隧道通、请求挂死"。**名单是会变的**，所以任何"我这里封了一切"的说法
+  都得带时间戳，否则无法复现也无法反驳。
+- **`HANG-IN-TUNNEL` 有 11 个**，包括 `github.com`。注意：`api.github.com` 是 200/339ms，而 `github.com` 挂死——
+  这解释了一个反复出现的现象：**API 能调，但 `git push` 会 502**。不是"GitHub 连不上"，是那个主机名的那条路。
+  同理 `smtp.qq.com` / `imap.qq.com` 本来就不提供 :443 HTTPS，它们的 HANG 不构成"不可用"证据——
+  这是我踩过的坑：把"我没有按对协议去敲"记成"对面不通"。
+- **4 个 `EMPTY-REPLY`**：HTTP 404/403 且 body 恰好 0 字节（`crates.io`、`dashscope.aliyuncs.com`、
+  `api.hunyuan.cloud.tencent.com`、`aip.baidubce.com`）。正常端点不会在自己的路径上回空 body，这种响应更像
+  中间层合成的"礼貌拒绝"。之前我的启发式把它误报成 `STUB-FAKE-OK`（那个是 200 + 4 字节 `OK`），已分开。
+- **能连上 ≠ 能用**：`dev.to`、`hashnode.com`、`cnblogs.com`、`juejin.cn` 这轮都是 200，但它们注册/发帖环节
+  分别卡在 Turnstile、checkpoint 或手机号。可达性是必要条件，不是充分条件——把这两件事混在一起，就会得出
+  "网络全封了"这种既不准确、又让自己放弃的结论。
 
 ## 第四种"连不上"：内容被截断在 2 MiB（2026-11-25 补测）
 

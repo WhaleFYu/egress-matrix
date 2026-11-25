@@ -182,11 +182,22 @@ def verdict(row):
     h = row["http"]
     if is_cap_body(h.get("preview") or "") or is_cap_body(h.get("err") or ""):
         return "CAP-THROTTLED"
-    if h.get("status") and h.get("bytes", 99) <= 8 and "json" not in (h.get("ctype") or ""):
+    b = h.get("bytes")
+    # 0 字节的 403/404 不是"桩"，是另一种值得单列的东西：正常端点（crates.io、阿里云百炼……）不会在
+    # 自己的路径上回一个空 body，这种响应很可能是中间层合成的"礼貌拒绝"。以前它被误报成 STUB-FAKE-OK。
+    if h.get("status") and (b == 0 or b is None and h.get("preview") == ""):
+        return "EMPTY-REPLY"
+    if h.get("status") and isinstance(b, int) and 0 < b <= 8 and "json" not in (h.get("ctype") or ""):
         return "STUB-FAKE-OK"
     if h.get("status"):
         return "REACHABLE"
-    if not row["dns"]["ok"]:
+    # 走到这里：隧道建起来了（CONNECT 200）、但 HTTP 没有回状态码。
+    # 以前这里会落进 "DNS-FAIL"——因为沙箱里裸 DNS 恒失败，这个 check 永远为 False，
+    # 于是 11 个"隧道通但请求挂死"的主机被误标成"域名解析失败"。DNS 检查只在**无代理**时才有意义。
+    err = (h.get("err") or "").lower()
+    if "timeout" in err or "timed out" in err:
+        return "HANG-IN-TUNNEL"
+    if not row["dns"]["ok"] and not row["connect"].get("status"):
         return "DNS-FAIL"
     return "TLS-OR-HTTP-FAIL"
 
