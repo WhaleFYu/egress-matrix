@@ -1,0 +1,44 @@
+name: vantage-github
+
+# 同一套探针，从第二个观测点跑：GitHub 的 runner（干净公网、无过滤出口）。
+# 目的不是"更全的表"，而是让归因可验证：一条结论只有在两个不同出口上重复出现，
+# 才能说它属于端点本身，而不是我的出口在骗人。见 README 的更正记录。
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"   # 每天一次，UTC 03:17
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run egress matrix (no proxy)
+        env:
+          EGRESS_PROXY: ""
+          http_proxy: ""
+          https_proxy: ""
+        run: |
+          OUT="results/vantage-github-$(date -u +%Y%m%d-%H%M).json"
+          python3 egress_matrix.py --proxy "" --out "$OUT" 2>&1 | tail -60
+          python3 - "$OUT" <<'PY'
+          import json, sys, collections
+          d = json.load(open(sys.argv[1]))
+          c = collections.Counter(r.get("verdict") for r in d["rows"])
+          print("verdicts:", dict(c))
+          open("results/vantage-github-latest.json", "w").write(json.dumps(d, ensure_ascii=False, indent=1))
+          PY
+      - name: Commit snapshot
+        run: |
+          git config user.name "vantage-bot"
+          git config user.email "vantage-bot@users.noreply.github.com"
+          git add results/vantage-github-latest.json results/vantage-github-*.json
+          git commit -m "data: GitHub runner vantage $(date -u +%Y%m%d-%H%M) UTC" || echo "nothing to commit"
+          git push
