@@ -1,0 +1,201 @@
+{
+ "generated_at": "2026-11-25T12:12:53+0800",
+ "proxy": "http://127.0.0.1:18081",
+ "host": "hcss-ecs-cada",
+ "rows": [
+  {
+   "host": "api.openai.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "22d76cdf2042697a"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 429,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 45,
+    "preview": "Experiment web download traffic cap reached.\n",
+    "ms": 88
+   },
+   "verdict": "CAP-THROTTLED"
+  },
+  {
+   "host": "api.deepseek.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "dfd386a86b7ff44b"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 429,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 45,
+    "preview": "Experiment web download traffic cap reached.\n",
+    "ms": 90
+   },
+   "verdict": "CAP-THROTTLED"
+  },
+  {
+   "host": "github.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "293788504c219541"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 429,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 45,
+    "preview": "Experiment web download traffic cap reached.\n",
+    "ms": 86
+   },
+   "verdict": "CAP-THROTTLED"
+  },
+  {
+   "host": "smtp.qq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "31f5588d71624c36"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 429,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 45,
+    "preview": "Experiment web download traffic cap reached.\n",
+    "ms": 97
+   },
+   "verdict": "CAP-THROTTLED"
+  },
+  {
+   "host": "pypi.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 200 Connection Established",
+    "err": null
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "sha256": "6b766bd0b5442334"
+    },
+    "err": null
+   },
+   "http": {
+    "status": 429,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 45,
+    "preview": "Experiment web download traffic cap reached.\n",
+    "ms": 87
+   },
+   "verdict": "CAP-THROTTLED"
+  },
+  {
+   "host": "inference.ai.azure.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": "HTTP/1.1 403 Forbidden",
+    "err": null
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "RuntimeError: CONNECT HTTP/1.1 403 Forbidden"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "ms": 169
+   },
+   "verdict": "PROXY-POLICY-DENY"
+  }
+ ]
+}
