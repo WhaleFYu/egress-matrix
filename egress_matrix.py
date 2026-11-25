@@ -42,6 +42,7 @@ DEFAULT_HOSTS = [
     "api.hunyuan.cloud.tencent.com", "api.together.xyz", "api.groq.com",
     "api.mistral.ai", "openrouter.ai", "api.cohere.com", "api.replicate.com",
     "huggingface.co", "inference.ai.azure.com",
+    "text.pollinations.ai/openai", "models.github.ai/inference/chat/completions",
     # 包与镜像
     "pypi.org", "files.pythonhosted.org", "registry.npmjs.org", "crates.io",
     "proxy.golang.org", "repo.maven.apache.org", "registry-1.docker.io",
@@ -132,14 +133,14 @@ def _issuer_from_der(der):
         return {}
 
 
-def http_probe(host, proxy):
+def http_probe(host, proxy, path="/"):
     """走 urllib 的 ProxyHandler：它会正确地先 CONNECT 再在隧道里做 TLS。
     （手写 HTTPSConnection(proxy)+set_tunnel 会把 TLS 握到代理自己身上，量出来的全是代理的假响应。）"""
     import urllib.request
     t0 = time.time()
     handlers = [urllib.request.ProxyHandler({"http": proxy, "https": proxy})] if proxy else [urllib.request.ProxyHandler({})]
     opener = urllib.request.build_opener(*handlers)
-    req = urllib.request.Request(f"https://{host}/", headers={"User-Agent": UA, "Accept": "*/*"})
+    req = urllib.request.Request(f"https://{host}{path or '/'}", headers={"User-Agent": UA, "Accept": "*/*"})
     try:
         with opener.open(req, timeout=TIMEOUT) as r:
             body = r.read(4096)
@@ -210,9 +211,14 @@ def verdict(row):
 
 
 def probe(host, proxy):
-    row = {"host": host, "dns": dns(host), "tcp": tcp(host),
-           "connect": connect_status(host, proxy), "tls": tls_issuer(host, proxy),
-           "http": http_probe(host, proxy)}
+    """host 可以写成 "example.com/v1/models"：域名部分做 DNS/TCP/TLS/CONNECT，
+    路径部分用于 GET。API 主机常常在 "/" 上挂死而在真实端点上正常——只用根路径测，
+    会把一个可用端点判成 HANG-IN-TUNNEL。"""
+    name, _, path = host.partition("/")
+    path = ("/" + path) if path else "/"
+    row = {"host": host, "dns": dns(name), "tcp": tcp(name),
+           "connect": connect_status(name, proxy), "tls": tls_issuer(name, proxy),
+           "http": http_probe(name, proxy, path)}
     row["verdict"] = verdict(row)
     return row
 

@@ -156,7 +156,14 @@ c. 状态码粘连：所有主机同一时刻一起 429、一起恢复 → 全�
 python3 egress_matrix.py                                   # 47 个默认端点，输出 md 表 + JSON
 python3 egress_matrix.py --proxy http://127.0.0.1:8080     # 指定代理（也可用 EGRESS_PROXY / https_proxy）
 python3 egress_matrix.py --hosts api.deepseek.com,pypi.org # 只测你关心的几个
+python3 egress_matrix.py --hosts text.pollinations.ai/openai   # 也可以写 host/path
 ```
+
+### 为什么要能写 `host/path`
+
+API 主机的根路径经常和真实端点不同命。本机实测 `text.pollinations.ai/` 会挂死到超时，
+而 `text.pollinations.ai/openai` 正常 200 —— 只测 `/` 会把一个**可用**的端点判成 `HANG-IN-TUNNEL`。
+域名部分仍然负责 DNS / TCP / TLS / CONNECT，只有 GET 用你给的路径。
 
 零依赖，Python ≥ 3.9，只用标准库。输出示例：
 
