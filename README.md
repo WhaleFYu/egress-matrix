@@ -81,6 +81,9 @@
 | `api.openai.com` | HANG-IN-TUNNEL | — | 6148 | 隧道通了，+6s 无响应 |
 | `gitlab.com` | HANG-IN-TUNNEL | — | 7664 | 隧道通了，+6s 无响应 |
 
+每轮快照的计数、以及同一主机跨轮次的 CONNECT 判决对照，都由 [`index_results.py`](index_results.py) 现算成
+[`results/INDEX.md`](results/INDEX.md)（不手写结论，避免索引和原始数据对不上）。
+
 几件从表里读出来的事（比表本身重要）：
 
 - **`PROXY-POLICY-DENY` 只剩 1 个**（`inference.ai.azure.com`）。同一份名单在 12:07 那轮是 2 个，
