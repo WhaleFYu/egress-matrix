@@ -1,0 +1,72 @@
+{
+ "measured_at": "2026-11-25T12:45:20+0800",
+ "proxy": "http://127.0.0.1:18081",
+ "rows": [
+  {
+   "url": "https://models.dev/api.json",
+   "full": {
+    "url": "https://models.dev/api.json",
+    "status": 200,
+    "declared": 2097152,
+    "received": 2097152,
+    "ms": 1771,
+    "content-type": "application/json",
+    "at_cap": true,
+    "truncated": true
+   },
+   "range": {
+    "url": "https://models.dev/api.json",
+    "status": 200,
+    "declared": 2097152,
+    "received": 2097152,
+    "ms": 1612,
+    "content-type": "application/json",
+    "asked": "bytes=1000-1999",
+    "range_honored": false
+   }
+  },
+  {
+   "url": "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-68.1.2.tar.gz",
+   "full": {
+    "url": "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-68.1.2.tar.gz",
+    "status": 200,
+    "declared": 2097152,
+    "received": 2097152,
+    "ms": 1496,
+    "content-type": "application/octet-stream",
+    "at_cap": true,
+    "truncated": true
+   },
+   "range": {
+    "url": "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-68.1.2.tar.gz",
+    "status": 206,
+    "declared": 1000,
+    "received": 1000,
+    "ms": 480,
+    "content-type": "application/octet-stream",
+    "asked": "bytes=1000-1999",
+    "range_honored": false
+   }
+  },
+  {
+   "url": "https://raw.githubusercontent.com/torvalds/linux/master/MAINTAINERS",
+   "full": {
+    "url": "https://raw.githubusercontent.com/torvalds/linux/master/MAINTAINERS",
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "ms": 40075,
+    "at_cap": false,
+    "truncated": false
+   },
+   "range": {
+    "url": "https://raw.githubusercontent.com/torvalds/linux/master/MAINTAINERS",
+    "status": 502,
+    "declared": 77,
+    "received": 77,
+    "ms": 733,
+    "asked": "bytes=1000-1999",
+    "range_honored": false
+   }
+  }
+ ]
+}

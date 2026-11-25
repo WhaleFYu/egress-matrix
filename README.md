@@ -25,6 +25,34 @@
 | TLS issuer | `CN = Local Network Proxy CA, O = Local Network`（且证书链**验证通过**，因为该 CA 在系统信任库里） |
 | 隧道内 HTTP | 全部 `429 / text/plain / 45 bytes / "Experiment web download traffic cap reached."` |
 
+
+## 第四种"连不上"：内容被截断在 2 MiB（2026-11-25 补测）
+
+这一类比前三类更阴：**连接成功、200、TLS 正常、Content-Length 也有——只是内容少了**，
+而且中间层会把自己截断后的长度写进 `Content-Length`，于是"收的字节 == 声明的字节"，看起来完整。
+真实症状出现在下游：JSON 解析器报 `Unterminated string`，`pip install` 报 `JSONDecodeError`。
+
+测法（`download_cap.py`，不靠猜，靠两个不同大小的文件）：
+
+```bash
+python3 download_cap.py https://models.dev/api.json https://files.pythonhosted.org/.../setuptools-68.1.2.tar.gz
+```
+
+实测（本机，经同一个出口）：
+
+| 目标 | 声明长度 | 实收 | 结论 |
+|---|---|---|---|
+| `models.dev/api.json`（真实约 7 MB） | 1 658 551 → 被改写成 2 097 152 | 2 097 152 | 停在 2 MiB |
+| `files.pythonhosted.org/.../setuptools-68.1.2.tar.gz` | — | 2 097 152 | **同一个数** |
+| `raw.githubusercontent.com/.../MAINTAINERS` | — | 超时 / 502 | 该主机在本出口下不稳定 |
+
+两个明显不同大小的文件停在**同一个** 2 097 152 字节（= 2 MiB），说明上限在中间层，而不在端点。
+`Range` 请求对部分端点会被兑现（回 206 + 精确的 1000 字节），但整段取回仍然只有 2 MiB 窗口。
+
+> 处置：这不是"绕过配额"的题目——它是平台自己的出口策略。工程上能做的是**别依赖大下载**：
+> 工具保持零依赖、配置与数据用小文件、需要大件时换环境。这也正好解释了为什么本仓库和
+> [`keyfleet`](https://github.com/WhaleFYu/keyfleet) 都是零依赖 Python：不是洁癖，是被量出来的约束。
+
 ### 三个能直接改结论的点
 
 **① 这层出口是黑名单，不是白名单。** 47 个里只拒了 2 个。所以"我这环境封了一切"这种说法，通常只是没测过——
