@@ -103,6 +103,32 @@ def connect_status(host, proxy):
 
 
 _ANCHORS = None
+_DERCERT = None
+
+
+def _dercert():
+    """拿到 dercert 模块。
+
+    不能只写 `import dercert`：本文件经常被**从别的目录**用 importlib 加载
+    （`public_site/server.py` 就是这么借用 verdict() 的），那时本目录不在 sys.path 里。
+    第一次踩到的时候，异常被 `_describe()` 吞成 {"error": ...}，调用方把它读成
+    「没有被中间人接管」——一个静默的假否定，比报错糟得多。
+    """
+    global _DERCERT
+    if _DERCERT is not None:
+        return _DERCERT
+    try:
+        import dercert as m
+    except ImportError:
+        import importlib.util
+        import sys
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dercert.py")
+        spec = importlib.util.spec_from_file_location("dercert", path)
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)          # type: ignore[union-attr]
+        sys.modules["dercert"] = m
+    _DERCERT = m
+    return m
 
 
 def _local_anchor_subjects():
@@ -110,9 +136,9 @@ def _local_anchor_subjects():
     global _ANCHORS
     if _ANCHORS is None:
         try:
-            import dercert
-            _ANCHORS = {(a.get("subject") or {}).get("CN") for a in dercert.local_anchors() if "subject" in a}
+            _ANCHORS = {(a.get("subject") or {}).get("CN") for a in _dercert().local_anchors() if "subject" in a}
         except Exception:
+            # 读不到"本机装了哪些根"时，宁可为空集合（= 判不出 MITM），也不要编一个
             _ANCHORS = set()
     return _ANCHORS
 
@@ -120,9 +146,9 @@ def _local_anchor_subjects():
 def _describe(der):
     """把对端证书压成几个能下结论的字段。指纹只能说明"是不是同一张"，名字才能说明"谁签的"。"""
     try:
-        import dercert
-        info = dercert.parse(der)
+        info = _dercert().parse(der)
     except Exception as e:
+        # 解析失败必须显式留痕：调用方看到 error 就知道"没测出来"，而不是"没问题"
         return {"error": f"{type(e).__name__}: {e}"[:80]}
     issuer, subject = info["issuer"], info["subject"]
     anchors = _local_anchor_subjects()
