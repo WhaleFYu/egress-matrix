@@ -1,0 +1,2038 @@
+{
+ "generated_at": "2026-11-26T04:26:52+0000",
+ "proxy": null,
+ "host": "runnervm0hi8g",
+ "valid": true,
+ "invalid_reason": [],
+ "rows": [
+  {
+   "host": "api.openai.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "162.159.140.245",
+     "172.66.0.243"
+    ],
+    "err": null,
+    "ms": 36
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 4
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "api.openai.com",
+     "not_after": "2027-02-01T04:43:49Z",
+     "sha256": "2270f63dd2b8877c",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 421,
+    "ctype": "application/json",
+    "bytes": 124,
+    "preview": "{\n    \"message\": \"Welcome to the OpenAI API! Documentation i",
+    "ms": 25
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.anthropic.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "160.79.104.10"
+    ],
+    "err": null,
+    "ms": 37
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "api.anthropic.com",
+     "not_after": "2027-02-17T19:49:15Z",
+     "sha256": "a7c9fde92631c1fb",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 88
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "generativelanguage.googleapis.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "172.217.112.4",
+     "172.217.113.4",
+     "172.217.114.4"
+    ],
+    "err": null,
+    "ms": 54
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 18
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE2",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "upload.video.google.com",
+     "not_after": "2027-01-26T08:28:39Z",
+     "sha256": "b07c3e4b1ceb0419",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 0,
+    "preview": "",
+    "ms": 50
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "api.deepseek.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "3.173.21.63"
+    ],
+    "err": null,
+    "ms": 40
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 21
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Amazon RSA 2048 S24",
+     "issuer_o": "Amazon",
+     "subject_cn": "*.deepseek.com",
+     "not_after": "2027-05-28T06:37:14Z",
+     "sha256": "751b4786f7812a4b",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 401,
+    "ctype": "application/json",
+    "bytes": 183,
+    "preview": "{\"error\":{\"message\":\"Authentication Fails (missing key) (req",
+    "ms": 276
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "dashscope.aliyuncs.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "39.96.198.249",
+     "39.96.213.166",
+     "8.140.217.18"
+    ],
+    "err": null,
+    "ms": 39
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 208
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign GCC R46 OV TLS CA 2025",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "*.aliyuncs.com",
+     "not_after": "2027-04-30T07:56:41Z",
+     "sha256": "18079a4c5afc5ebb",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 628
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "open.bigmodel.cn",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "47.251.66.145",
+     "47.88.85.161"
+    ],
+    "err": null,
+    "ms": 410
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 9
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WoTrus RSA DV SSL CA 2",
+     "issuer_o": "WoTrus CA Limited",
+     "subject_cn": "*.bigmodel.cn",
+     "not_after": "2027-05-12T23:59:59Z",
+     "sha256": "a1ea761171eb200e",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4096,
+    "preview": "<!doctype html><html lang=\"zh-cn\"><head><meta charset=\"utf-8",
+    "ms": 204
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.moonshot.cn",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "8.147.223.37"
+    ],
+    "err": null,
+    "ms": 298
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 213
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "RapidSSL TLS RSA CA G1",
+     "issuer_o": "DigiCert Inc",
+     "subject_cn": "*.moonshot.cn",
+     "not_after": "2027-03-24T23:59:59Z",
+     "sha256": "441819a0e2cc64bb",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 112,
+    "preview": "{\"message\":\"Welcome to the Moonshot API! Documentation is av",
+    "ms": 897
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "ark.cn-beijing.volces.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "101.126.13.31"
+    ],
+    "err": null,
+    "ms": 37
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 210
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "RapidSSL TLS RSA CA G1",
+     "issuer_o": "DigiCert Inc",
+     "subject_cn": "ark.cn-beijing.volces.com",
+     "not_after": "2027-04-26T23:59:59Z",
+     "sha256": "f8f9b9e49ff45f2d",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 401,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 210,
+    "preview": "{\"error\":{\"code\":\"AuthenticationError\",\"message\":\"the API ke",
+    "ms": 653
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.siliconflow.cn",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "47.238.75.100",
+     "47.83.139.152"
+    ],
+    "err": null,
+    "ms": 54
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 315
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Encryption Everywhere DV TLS CA - G2",
+     "issuer_o": "DigiCert Inc",
+     "subject_cn": "*.siliconflow.cn",
+     "not_after": "2026-12-26T23:59:59Z",
+     "sha256": "bd7075aabb12e133",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 9,
+    "preview": "Not Found",
+    "ms": 498
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.minimax.chat",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "47.79.117.67",
+     "47.79.2.234"
+    ],
+    "err": null,
+    "ms": 88
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 244
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "DNSPod DV TLS RSA CA 2025",
+     "issuer_o": "DNSPod, Inc.",
+     "subject_cn": "*.minimax.chat",
+     "not_after": "2027-02-04T23:59:59Z",
+     "sha256": "43939ab6acec7ee8",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8",
+    "ms": 2068
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "qianfan.baidubce.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "45.113.194.195",
+     "45.113.194.71"
+    ],
+    "err": null,
+    "ms": 332
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 363
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign RSA OV SSL CA 2018",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "baidu.com",
+     "not_after": "2027-01-24T02:32:55Z",
+     "sha256": "ca5688c552685190",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 110,
+    "preview": "{\"message\":\"Resource not found.\",\"code\":\"ResourceNotFound\",\"",
+    "ms": 679
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "aip.baidubce.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "103.235.47.184",
+     "103.235.47.237"
+    ],
+    "err": null,
+    "ms": 371
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 354
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign RSA OV SSL CA 2018",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "baidu.com",
+     "not_after": "2027-01-24T02:32:55Z",
+     "sha256": "ca5688c552685190",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 403,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 0,
+    "preview": "",
+    "ms": 602
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "api.hunyuan.cloud.tencent.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "43.129.139.48",
+     "43.129.254.4"
+    ],
+    "err": null,
+    "ms": 7
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 149
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",
+     "issuer_o": "DigiCert, Inc.",
+     "subject_cn": "*.hunyuan.cloud.tencent.com",
+     "not_after": "2027-04-12T23:59:59Z",
+     "sha256": "bc71ff87abf0f6c6",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 527
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "api.together.xyz",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.43.158",
+     "172.64.144.98"
+    ],
+    "err": null,
+    "ms": 6
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 9
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "together.xyz",
+     "not_after": "2027-01-31T10:34:34Z",
+     "sha256": "bb90c9226cf080e3",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"en\" translate=\"no\"><head><meta ch",
+    "ms": 66
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.groq.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.38.236",
+     "172.64.149.20"
+    ],
+    "err": null,
+    "ms": 48
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 6
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "api.groq.com",
+     "not_after": "2027-02-02T10:51:57Z",
+     "sha256": "4417314d8360af5d",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 100,
+    "preview": "{\"message\":\"Welcome to the Groq API! Documentation is availa",
+    "ms": 57
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.mistral.ai",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "162.159.142.207",
+     "172.66.2.203"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "api.mistral.ai",
+     "not_after": "2027-01-19T04:26:12Z",
+     "sha256": "89da3bfc0d0268dc",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 103,
+    "preview": "{\n  \"message\":\"no Route matched with those values\",\n  \"reque",
+    "ms": 191
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "openrouter.ai",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.2.115",
+     "104.18.3.115"
+    ],
+    "err": null,
+    "ms": 18
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 8
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "openrouter.ai",
+     "not_after": "2027-02-23T07:58:43Z",
+     "sha256": "4333c52507af671b",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html data-dpl-id=\"dpl_J1wTCYd19JEPLFcA2SrFoF",
+    "ms": 87
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.cohere.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "34.96.76.122"
+    ],
+    "err": null,
+    "ms": 19
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 32
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "YR2",
+     "issuer_o": "Let's Encrypt",
+     "subject_cn": "api.cohere.com",
+     "not_after": "2027-02-16T09:58:23Z",
+     "sha256": "3e6e41cf815cc52a",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 74,
+    "preview": "{\"id\":\"bc267bed-7e68-416d-9143-010684e5deee\",\"message\":\"inva",
+    "ms": 110
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.replicate.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.2.60",
+     "104.18.3.60"
+    ],
+    "err": null,
+    "ms": 45
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 26
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "replicate.com",
+     "not_after": "2027-02-14T22:51:27Z",
+     "sha256": "ed519e533727d7aa",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 3,
+    "preview": "{}\n",
+    "ms": 53
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "huggingface.co",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "108.138.246.67",
+     "108.138.246.71",
+     "108.138.246.79"
+    ],
+    "err": null,
+    "ms": 5
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 6
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Amazon RSA 2048 M01",
+     "issuer_o": "Amazon",
+     "subject_cn": "huggingface.co",
+     "not_after": "2027-02-27T23:59:59Z",
+     "sha256": "0eca454b46a3617c",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html>\n<html class=\"\">\n\t<head>\n\t\t<meta charset=\"utf",
+    "ms": 12
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "inference.ai.azure.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -5] No address associated with hostname",
+    "ms": 16
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -5] No address associated with hostname",
+    "ms": 8
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -5] No address associated with hostname"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+    "ms": 10
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "text.pollinations.ai/openai",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.6.216",
+     "104.18.7.216"
+    ],
+    "err": null,
+    "ms": 7
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 8
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "pollinations.ai",
+     "not_after": "2027-02-01T23:00:44Z",
+     "sha256": "4a23b93386d53814",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 345,
+    "preview": "Sounds like you’re thinking about OpenAI! What’s on your",
+    "ms": 241
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "models.github.ai/inference/chat/completions",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "140.82.112.22"
+    ],
+    "err": null,
+    "ms": 13
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 65
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Sectigo Public Server Authentication CA DV R36",
+     "issuer_o": "Sectigo Limited",
+     "subject_cn": "*.github.ai",
+     "not_after": "2027-01-30T23:59:59Z",
+     "sha256": "ee64a8df35338eb2",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/plain",
+    "bytes": 4,
+    "preview": "OK\r\n",
+    "ms": 199
+   },
+   "verdict": "STUB-FAKE-OK"
+  },
+  {
+   "host": "pypi.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "151.101.0.223",
+     "151.101.128.223",
+     "151.101.192.223"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 11
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign Atlas R3 DV TLS CA 2025 Q4",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "pypi.org",
+     "not_after": "2027-01-29T04:33:07Z",
+     "sha256": "15581c41023f0789",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n  <head>\n    <met",
+    "ms": 38
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "files.pythonhosted.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "151.101.0.223",
+     "151.101.128.223",
+     "151.101.192.223"
+    ],
+    "err": null,
+    "ms": 3
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 10
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign Atlas R46 DV TLS CA 2026 Q4",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "*.pythonhosted.org",
+     "not_after": "2027-06-12T20:13:13Z",
+     "sha256": "1d3a49f40a7fedf8",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/plain; charset=UTF-8",
+    "bytes": 10,
+    "preview": "Not found.",
+    "ms": 44
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "registry.npmjs.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.16.0.34",
+     "104.16.1.34",
+     "104.16.10.34"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "npmjs.org",
+     "not_after": "2027-01-20T11:16:47Z",
+     "sha256": "2b073c23a7ba0173",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 2,
+    "preview": "{}",
+    "ms": 26
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "crates.io",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "151.101.130.137",
+     "151.101.194.137",
+     "151.101.2.137"
+    ],
+    "err": null,
+    "ms": 8
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 25
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign Atlas R3 DV TLS CA 2025 Q4",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "crates.io",
+     "not_after": "2027-02-16T15:26:58Z",
+     "sha256": "cc59f1a65dcc59d3",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "preview": "",
+    "ms": 85
+   },
+   "verdict": "EMPTY-REPLY"
+  },
+  {
+   "host": "proxy.golang.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "142.251.218.113"
+    ],
+    "err": null,
+    "ms": 2
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 21
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE2",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "misc-sni.google.com",
+     "not_after": "2027-01-26T08:27:25Z",
+     "sha256": "a42be0612f916abe",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"en\">\n  <meta name=\"viewport\" con",
+    "ms": 30
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "repo.maven.apache.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.18.12",
+     "104.18.19.12"
+    ],
+    "err": null,
+    "ms": 14
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "YE1",
+     "issuer_o": "Let's Encrypt",
+     "subject_cn": "repo.maven.apache.org",
+     "not_after": "2026-12-28T21:02:58Z",
+     "sha256": "6f16714340b053ab",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 308,
+    "preview": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/ht",
+    "ms": 30
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "registry-1.docker.io",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "100.51.157.111",
+     "3.216.131.223",
+     "44.213.138.104"
+    ],
+    "err": null,
+    "ms": 2
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 69
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Amazon RSA 2048 M01",
+     "issuer_o": "Amazon",
+     "subject_cn": "*.docker.com",
+     "not_after": "2027-03-10T23:59:59Z",
+     "sha256": "aaabbb8bdfd56b6e",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/plain; charset=utf-8",
+    "bytes": 19,
+    "preview": "404 page not found\n",
+    "ms": 223
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "ghcr.io",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "172.182.252.136"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 22
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Sectigo Public Server Authentication CA DV R36",
+     "issuer_o": "Sectigo Limited",
+     "subject_cn": "*.ghcr.io",
+     "not_after": "2027-01-05T23:59:59Z",
+     "sha256": "19801e1fcfc7ebc1",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "\n\n\n\n\n\n\n\n<!DOCTYPE html>\n<html\n  lang=\"en\"\n  data-color-mode=",
+    "ms": 487
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "cdn.jsdelivr.net",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "151.101.1.229",
+     "151.101.129.229",
+     "151.101.193.229"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 14
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign Atlas R46 DV TLS CA 2026 Q4",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "jsdelivr.net",
+     "not_after": "2027-05-08T13:50:25Z",
+     "sha256": "183c7e7cb4d2ca04",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html> <html lang=\"en\"><head><meta charset=\"utf-8\">",
+    "ms": 104
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "unpkg.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.18.0.22",
+     "104.18.1.22"
+    ],
+    "err": null,
+    "ms": 2
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "unpkg.com",
+     "not_after": "2027-02-04T19:58:55Z",
+     "sha256": "879d48bd6cf2fe9d",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"en\" class=\"bg-paper dark:bg-dark-",
+    "ms": 125
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "storage.googleapis.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "142.251.108.207",
+     "142.251.121.207",
+     "192.178.142.207"
+    ],
+    "err": null,
+    "ms": 2
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 21
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE2",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "storage.googleapis.com",
+     "not_after": "2027-01-26T08:32:10Z",
+     "sha256": "42330480d5f33fb5",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 400,
+    "ctype": "application/xml; charset=UTF-8",
+    "bytes": 181,
+    "preview": "<?xml version='1.0' encoding='UTF-8'?><Error><Code>MissingSe",
+    "ms": 87
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "s3.amazonaws.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "16.15.229.60",
+     "16.15.244.135",
+     "16.15.245.59"
+    ],
+    "err": null,
+    "ms": 3
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 67
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Amazon RSA 2048 M01",
+     "issuer_o": "Amazon",
+     "subject_cn": "s3.amazonaws.com",
+     "not_after": "2027-04-05T23:59:59Z",
+     "sha256": "e01cecbc6b4f96cf",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html>\n<html lang=\"en-US\" data-static-assets=\"https",
+    "ms": 330
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "github.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "4.236.95.112"
+    ],
+    "err": null,
+    "ms": 0
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 24
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Sectigo Public Server Authentication CA DV E36",
+     "issuer_o": "Sectigo Limited",
+     "subject_cn": "github.com",
+     "not_after": "2027-01-27T23:59:59Z",
+     "sha256": "7dc4d85cf1e31097",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "\n\n\n\n\n\n\n\n<!DOCTYPE html>\n<html\n  lang=\"en\"\n  \n  data-color-mo",
+    "ms": 86
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.github.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "172.182.252.137"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 17
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Sectigo Public Server Authentication CA DV E36",
+     "issuer_o": "Sectigo Limited",
+     "subject_cn": "*.github.com",
+     "not_after": "2027-01-25T23:59:59Z",
+     "sha256": "30988ded7e78994b",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "application/json; charset=utf-8",
+    "bytes": 2262,
+    "preview": "{\"current_user_url\":\"https://api.github.com/user\",\"current_u",
+    "ms": 61
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "raw.githubusercontent.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "185.199.108.133",
+     "185.199.109.133",
+     "185.199.110.133"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 2
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "YR1",
+     "issuer_o": "Let's Encrypt",
+     "subject_cn": "*.github.io",
+     "not_after": "2026-12-29T23:44:45Z",
+     "sha256": "f2f9a159ce50a0a1",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "\n\n\n\n\n\n\n\n<!DOCTYPE html>\n<html\n  lang=\"en\"\n  \n  data-color-mo",
+    "ms": 96
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "objects.githubusercontent.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "185.199.108.133",
+     "185.199.109.133",
+     "185.199.110.133"
+    ],
+    "err": null,
+    "ms": 3
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 4
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "YR1",
+     "issuer_o": "Let's Encrypt",
+     "subject_cn": "*.github.io",
+     "not_after": "2026-12-29T23:44:45Z",
+     "sha256": "f2f9a159ce50a0a1",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 404,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 425,
+    "preview": "\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLI",
+    "ms": 15
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "gitlab.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "172.65.251.78"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Sectigo Public Server Authentication CA DV R36",
+     "issuer_o": "Sectigo Limited",
+     "subject_cn": "gitlab.com",
+     "not_after": "2027-05-12T23:59:59Z",
+     "sha256": "8412f4407213bc94",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"en-US\" data-country-code=\"us\"><he",
+    "ms": 178
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "gitee.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "180.76.198.225",
+     "180.76.198.77",
+     "180.76.199.13"
+    ],
+    "err": null,
+    "ms": 382
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 3337
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "TrustAsia DV TLS RSA CA 2024",
+     "issuer_o": "TrustAsia Technologies, Inc.",
+     "subject_cn": "*.gitee.com",
+     "not_after": "2027-02-20T06:59:59Z",
+     "sha256": "9e3204ff2a48f921",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html lang=\"zh-CN\" class=\"\"><head><meta charS",
+    "ms": 1690
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "dev.to",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "151.101.130.217",
+     "151.101.194.217",
+     "151.101.2.217"
+    ],
+    "err": null,
+    "ms": 6
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 4
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GlobalSign Atlas R46 DV TLS CA 2026 Q4",
+     "issuer_o": "GlobalSign nv-sa",
+     "subject_cn": "dev.to",
+     "not_after": "2027-05-15T21:11:46Z",
+     "sha256": "672288892a2c0a60",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=",
+    "ms": 356
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "hashnode.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "216.150.1.193",
+     "216.150.16.193"
+    ],
+    "err": null,
+    "ms": 46
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 18
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "YR2",
+     "issuer_o": "Let's Encrypt",
+     "subject_cn": "hashnode.com",
+     "not_after": "2027-01-08T00:16:06Z",
+     "sha256": "7818f0bb87501860",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html><html data-dpl-id=\"dpl_A8fJopqbs8LEbrcM3bzhX3",
+    "ms": 73
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "juejin.cn",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "8.45.176.205",
+     "8.45.176.206",
+     "8.45.176.207"
+    ],
+    "err": null,
+    "ms": 304
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 203
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "RapidSSL TLS RSA CA G1",
+     "issuer_o": "DigiCert Inc",
+     "subject_cn": "*.juejin.cn",
+     "not_after": "2027-01-18T23:59:59Z",
+     "sha256": "22171e261e937ef1",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 2397,
+    "preview": "<!DOCTYPE html><html lang=\"en\"><head><link rel=\"icon\"href=\"d",
+    "ms": 447
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "cnblogs.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "101.37.97.51"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 190
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "Encryption Everywhere DV TLS CA - G2",
+     "issuer_o": "DigiCert Inc",
+     "subject_cn": "*.cnblogs.com",
+     "not_after": "2027-02-10T23:59:59Z",
+     "sha256": "ed6a37dff671ace8",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html lang=\"zh-cn\">\n<head>\n    <meta charset",
+    "ms": 1644
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "ifdian.net",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "104.16.192.0",
+     "104.17.160.0",
+     "104.17.96.0"
+    ],
+    "err": null,
+    "ms": 78
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 249
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "WE1",
+     "issuer_o": "Google Trust Services",
+     "subject_cn": "ifdian.net",
+     "not_after": "2027-01-18T23:31:36Z",
+     "sha256": "b975c500ca0d4e66",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!doctype html><html lang=\"zh-CN\"><head><script id=\"web-atn-",
+    "ms": 816
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "api.telegram.org",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "149.154.166.110"
+    ],
+    "err": null,
+    "ms": 1
+   },
+   "tcp": {
+    "ok": true,
+    "err": null,
+    "ms": 153
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": true,
+    "issuer": {
+     "issuer_cn": "GoDaddy TLS Intermediate CA DV - R1v1",
+     "issuer_o": "GoDaddy.com",
+     "subject_cn": "api.telegram.org",
+     "not_after": "2027-05-29T15:19:27Z",
+     "sha256": "86676813f45fc83a",
+     "mitm_local_ca": false,
+     "chain_verified": true
+    },
+    "err": null
+   },
+   "http": {
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 4096,
+    "preview": "<!DOCTYPE html>\n<html class=\"\" data-theme=\"light\">\n  <head>\n",
+    "ms": 1036
+   },
+   "verdict": "REACHABLE"
+  },
+  {
+   "host": "smtp.qq.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "43.163.178.2",
+     "43.163.178.99"
+    ],
+    "err": null,
+    "ms": 490
+   },
+   "tcp": {
+    "ok": false,
+    "err": "OSError: [Errno 101] Network is unreachable",
+    "ms": 12258
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "OSError: [Errno 101] Network is unreachable"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno 101] Network is unreachable>",
+    "ms": 12019
+   },
+   "verdict": "TLS-OR-HTTP-FAIL"
+  },
+  {
+   "host": "imap.qq.com",
+   "dns": {
+    "ok": true,
+    "ips": [
+     "43.163.178.2",
+     "43.163.178.99"
+    ],
+    "err": null,
+    "ms": 298
+   },
+   "tcp": {
+    "ok": false,
+    "err": "OSError: [Errno 101] Network is unreachable",
+    "ms": 12376
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "OSError: [Errno 101] Network is unreachable"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno 101] Network is unreachable>",
+    "ms": 12018
+   },
+   "verdict": "TLS-OR-HTTP-FAIL"
+  }
+ ]
+}
