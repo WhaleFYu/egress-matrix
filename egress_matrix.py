@@ -102,8 +102,49 @@ def connect_status(host, proxy):
         return {"status": None, "err": f"{type(e).__name__}: {e}"[:160]}
 
 
+_ANCHORS = None
+
+
+def _local_anchor_subjects():
+    """本机额外装进信任库的根证书的 subject 集合（正常云主机应为空）。见 dercert.local_anchors。"""
+    global _ANCHORS
+    if _ANCHORS is None:
+        try:
+            import dercert
+            _ANCHORS = {(a.get("subject") or {}).get("CN") for a in dercert.local_anchors() if "subject" in a}
+        except Exception:
+            _ANCHORS = set()
+    return _ANCHORS
+
+
+def _describe(der):
+    """把对端证书压成几个能下结论的字段。指纹只能说明"是不是同一张"，名字才能说明"谁签的"。"""
+    try:
+        import dercert
+        info = dercert.parse(der)
+    except Exception as e:
+        return {"error": f"{type(e).__name__}: {e}"[:80]}
+    issuer, subject = info["issuer"], info["subject"]
+    anchors = _local_anchor_subjects()
+    icn, scn = issuer.get("CN"), subject.get("CN")
+    return {
+        "issuer_cn": icn,
+        "issuer_o": issuer.get("O"),
+        "subject_cn": scn,
+        "not_after": info["not_after"],
+        "sha256": info["sha256"][:16],
+        # 判据：签发者正是"这台机器自己加的"根 → 该证书是本地中间人现签的，不是站点自己的。
+        # 注意与 self_signed 区分：站点自签证书也是"签给自己"，但它不在这台机器的信任库里。
+        "mitm_local_ca": bool(icn and icn in anchors and icn != scn),
+    }
+
+
 def tls_issuer(host, proxy):
-    """直连时用系统 CA 校验（失败即报错，不降级）；走代理时不校验链，只为读 issuer。"""
+    """直连时用系统 CA 校验（失败即报错，不降级）；走代理时不校验链，只为读对端证书。
+
+    CERT_NONE 下 `getpeercert()` 返回 {}，所以只能用 binary_form 拿裸 DER 再自己解（dercert.py）。
+    这样 ③（被解密）才有证据：issuer_cn 是谁、它是不是本机信任库里那张自加的根。
+    """
     def go():
         if proxy:
             head, s = _proxy_connect(host, proxy)
@@ -112,25 +153,21 @@ def tls_issuer(host, proxy):
                 raise RuntimeError("CONNECT " + head[:40])
             ctx = ssl.create_default_context()
             ctx.check_hostname = False
-            ctx.verify_mode = ssl.CERT_NONE   # 只读 issuer，不做信任判断
-            with ctx.wrap_socket(s, server_hostname=host) as ss:
-                der = ss.getpeercert(binary_form=True)
-            return _issuer_from_der(der)
+            ctx.verify_mode = ssl.CERT_NONE   # 只读对端证书，不做信任判断
+            try:
+                with ctx.wrap_socket(s, server_hostname=host) as ss:
+                    der = ss.getpeercert(binary_form=True)
+            finally:
+                s.close()
+            return _describe(der)
         ctx = ssl.create_default_context()
         with socket.create_connection((host, 443), TIMEOUT) as raw, ctx.wrap_socket(raw, server_hostname=host) as ss:
-            return dict(x[0] for x in ss.getpeercert()["issuer"])
+            der = ss.getpeercert(binary_form=True)
+            info = _describe(der)
+            info["chain_verified"] = True   # 到这里说明握手时系统信任库校验通过了
+            return info
     r = _t(go)
     return {"ok": r["ok"], "issuer": r.get("v"), "err": r.get("err")}
-
-
-def _issuer_from_der(der):
-    # 极简 DER 扫描：够读 CN/O 就够了，不引第三方库
-    try:
-        import hashlib
-        # 用 ssl 解析不了裸 DER 的 issuer，这里退化为指纹 + 已知映射
-        return {"sha256": hashlib.sha256(der).hexdigest()[:16]}
-    except Exception:
-        return {}
 
 
 def http_probe(host, proxy, path="/"):
@@ -157,6 +194,32 @@ def http_probe(host, proxy, path="/"):
 
 
 CAP_MARKERS = ("download traffic cap", "traffic cap reached", "experiment web download")
+
+
+def assess(rows, proxy):
+    """这张表能不能当证据用。返回 (valid, reasons[])。
+
+    为什么需要它：`matrix_cron.sh` 由 cron 拉起，而 cron **不继承登录 shell 的代理环境变量**。
+    2026-11-26 05:30 的那轮快照就是这幺跑的：49 个端点全 `DNS-FAIL`，而本机直连路径本来就没有解析器
+    （`systemd-resolved` 对任何域名 SERVFAIL）。看起来像“中国墙了 49 个端点”，实际上什么都没测。
+    一张会自己变成谎话的表，比没有表更糟——所以先自检，再把不合格的轮次挪进 `results/invalid/`，
+    让 `index_results.py` 的 glob 自然看不见它。
+    """
+    from collections import Counter
+    n = len(rows) or 1
+    vs = Counter(r.get("verdict") for r in rows)
+    reasons = []
+    if not proxy:
+        f = vs.get("DNS-FAIL", 0) / n
+        if f >= 0.5:
+            reasons.append(f"no-proxy-and-{f:.0%}-dns-fail: 没配代理，直连路径没有解析器，这轮等于什么都没测")
+    cap = vs.get("CAP-THROTTLED", 0)
+    if cap >= max(3, int(0.3 * n)):
+        reasons.append(f"global-cap-{cap}/{n}: 跨主机同一段限额文案 = 中间层在说话，可达性结论无效")
+    crash = vs.get("PROBE-CRASH", 0)
+    if crash / n >= 0.5:
+        reasons.append(f"probe-crash-{crash}/{n}: 探针自身大规模抛错")
+    return (not reasons, reasons)
 
 
 def is_cap_body(text):
@@ -228,7 +291,14 @@ def main():
     ap.add_argument("--proxy", default=os.environ.get("EGRESS_PROXY") or os.environ.get("http_proxy") or os.environ.get("HTTP_PROXY") or "")
     ap.add_argument("--hosts", default="")
     ap.add_argument("--out", default="")
+    ap.add_argument("--require-proxy", action="store_true",
+                    help="没拿到代理就拒跑（退出码 2）。定时任务必须带它：cron 不继承代理变量。")
     a = ap.parse_args()
+    if a.require_proxy and not a.proxy:
+        print("egress_matrix: --require-proxy 但没有任何代理配置（EGRESS_PROXY / http_proxy / --proxy）。\n"
+              "拒绝在无代理下跑：这台机器的直连路径没有解析器，跑出来的表会把「什么都没测」写成「全部不可达」。",
+              file=sys.stderr)
+        return 2
     hosts = [h.strip() for h in a.hosts.split(",") if h.strip()] or DEFAULT_HOSTS
 
     print(f"# egress matrix  {time.strftime('%Y-%m-%d %H:%M:%S %Z')}  host={socket.gethostname()}  "
@@ -244,9 +314,12 @@ def main():
     order = {h: i for i, h in enumerate(hosts)}
     rows.sort(key=lambda r: order.get(r["host"], 99))
 
+    valid, reasons = assess(rows, a.proxy)
     out = {"generated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "proxy": a.proxy or None,
-           "host": socket.gethostname(), "rows": rows}
+           "host": socket.gethostname(), "valid": valid, "invalid_reason": reasons, "rows": rows}
     path = a.out or f"results/matrix-{time.strftime('%Y%m%d-%H%M')}.json"
+    if not valid and not a.out:
+        path = os.path.join("results", "invalid", os.path.basename(path))
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1)
@@ -262,7 +335,20 @@ def main():
         print(f"\n## 全局限额信号\n\n{len(caps)}/{len(rows)} 个端点返回同一段报文（{len(bodies)} 种不同 body）。"
               f"\n跨主机同文 = 中间层在回话，不是上游限流。此时任何「可达性」结论都无效，先等窗口恢复。")
     print(f"\nJSON -> {path}", file=sys.stderr)
+    if not valid:
+        print("## 本轮快照不合格，已进 results/invalid/：", file=sys.stderr)
+        for r in reasons:
+            print("   - " + r, file=sys.stderr)
+        return 3
+    # issuer 只在握手成功时存在；探针失败的行这里是 None，不能直接 .get()
+    mitm = [r for r in rows if ((r.get("tls") or {}).get("issuer") or {}).get("mitm_local_ca")]
+    if mitm:
+        certs = {(r["tls"]["issuer"].get("issuer_cn"), r["tls"]["issuer"].get("issuer_o")) for r in mitm}
+        print(f"\n## 中间人证据（③）：{len(mitm)}/{len(rows)} 个端点的对端证书由本机自装的根签发 "
+              f"{sorted(certs)[:2]}；且 subject_cn 逐主机伪造（如 "
+              f"{mitm[0]['host'].split('/')[0]}）——它们是**现场签的**，不是站点自己的证书。", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

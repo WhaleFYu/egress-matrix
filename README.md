@@ -22,7 +22,7 @@
 | CONNECT 被 403 的端点（12:07 那轮） | **2 / 47**：`api.openai.com`、`inference.ai.azure.com`（14:42 复测只剩 1 个） |
 | 同一端点 18 分钟后复测（12:25） | `api.openai.com` 变成 **200**，`inference.ai.azure.com` 仍是 403 —— **策略是会变的** |
 | CONNECT 被 200 放行的端点 | **45 / 47**，包括 `api.anthropic.com`、`huggingface.co`、`api.telegram.org`、`smtp.qq.com` |
-| TLS issuer | `CN = Local Network Proxy CA, O = Local Network`（且证书链**验证通过**，因为该 CA 在系统信任库里） |
+| TLS issuer | **48/48 条握手全部是 `issuer CN = Local Network Proxy CA, O = Local Network`**，而 `subject CN` 是逐主机伪造的（`api.openai.com`、`example.com`、`open.bigmodel.cn` 各是一张现场签的证书）。签发者本体在 `/usr/local/share/ca-certificates/local-net-proxy.crt`——**本机自己加进信任库的根**，所以链验证是通过的（2026-11-26 用 `dercert.py` 解析裸 DER 取得，见下节） |
 | 隧道内 HTTP | 全部 `429 / text/plain / 45 bytes / "Experiment web download traffic cap reached."` |
 
 
@@ -165,7 +165,7 @@ API 主机的根路径经常和真实端点不同命。本机实测 `text.pollin
 而 `text.pollinations.ai/openai` 正常 200 —— 只测 `/` 会把一个**可用**的端点判成 `HANG-IN-TUNNEL`。
 域名部分仍然负责 DNS / TCP / TLS / CONNECT，只有 GET 用你给的路径。
 
-零依赖，Python ≥ 3.9，只用标准库。输出示例：
+零依赖，Python ≥ 3.9，只用标准库。测试：`python3 tests/test_verdict.py && python3 tests/test_assess.py && python3 tests/test_dercert.py`（都不联网）。输出示例：
 
 ```
 | host | verdict | connect | http | bytes |
@@ -196,6 +196,50 @@ API 主机的根路径经常和真实端点不同命。本机实测 `text.pollin
    这也是保留原始观测（而不只保留结论）的理由：分类器会错，观测不会。
 2. 新加 `RELAY-5XX`：`api.openai.com` 曾以一个 502 + `Upstream fetch failed: Cannot connect to host ...` 的响应
    被判成 `REACHABLE`（"拿到状态码就算通"）。那其实是出口在说"我到不了源站"。现在单列。
+
+## ③「内容被解密过」这件事，得有人把证书读出来
+
+前两类（策略拒绝 / 限额）只看 CONNECT 和 body 就够。第三类的证据只能在**对端证书**里：
+谁签的？如果签发者是这台机器自己装进信任库的根，那么中间人能伪造任意站点，且这台机器会信任它。
+
+这件事以前在这份 README 里是一句**没有代码支撑的话**：`tls_issuer()` 拿 `binary_form=True` 的裸 DER，
+而 `_issuer_from_der()` 的实现是 `sha256(der)[:16]`，然后把这个指纹命名成 `issuer`。
+指纹能回答"是不是同一张证书"，**永远回答不了"签发者是谁"**。所以旧数据里 `tls.issuer` 实际只是
+`{"sha256": "..."}`，而表里那句 "issuer = CN = Local Network Proxy CA" 来自手工 openssl 观察，不是探针测的。
+
+现在用 `dercert.py`（纯标准库 DER 解析，约 200 行）读出来，判据写死成一条可反驳的规则：
+
+| 字段 | 含义 |
+|---|---|
+| `tls.issuer.issuer_cn` / `issuer_o` | 对端证书的签发者 |
+| `tls.issuer.subject_cn` | 对端自称是谁（MITM 会逐主机伪造，所以它不可信） |
+| `tls.issuer.mitm_local_ca` | **签发者 CN 出现在 `/usr/local/share/ca-certificates/` 里**且不等于对端 subject |
+| `tls.issuer.not_after` / `sha256` | 便于人工比对（`sha256` 与 `openssl x509 -fingerprint -sha256` 同值，取前 16 位） |
+
+`/usr/local/share/ca-certificates/` 是 `update-ca-certificates` 唯一扫描的"管理员新加根"目录，
+正常云主机应当是空的。它不空 + 对端由它签发 = 这条出口在拆你的 TLS，而且拆得很成功（链验证通过）。
+这与"站点自签证书"是两件不同的事：自签证书**不在**这台机器的信任库里。
+
+一处诚实的限制：这个判据只能抓到"用**本机信任的**根做的 MITM"。若中间人让证书校验直接失败，
+你会看到 `TLS-OR-HTTP-FAIL` 而不是 `mitm_local_ca=true`。
+
+## `--require-proxy` 与"不合格的快照"
+
+`results/invalid/` 里留着第一个案子：`matrix-20261126-0530.json`。它由 cron 拉起，而 **cron 不继承登录 shell 的
+代理环境变量**，于是探针走了直连路径——这条路径本来就没有解析器（`systemd-resolved` 对任何域名 SERVFAIL）——
+49 个端点全落成 `DNS-FAIL`。文件写成了，`INDEX.md` 也生成了，表上看起来像"49 个端点同时不可达"。
+
+修了三层，缺一层都还会复发：
+
+1. `matrix_cron.sh` 显式 `export http_proxy/https_proxy`（与 `keepalive.sh` 一致）；
+2. `egress_matrix.py --require-proxy`：拿不到代理就**拒跑**，退出码 2，不写文件；
+3. `assess()`：写盘前自检，不合格的轮次移进 `results/invalid/` 并退出码 3（`index_results.py` 的 glob 不递归，自然看不见）。
+
+判"不合格"的两条规则都是可反驳的：无代理且 ≥50% `DNS-FAIL`；`CAP-THROTTLED` ≥ max(3, 30%)。
+`tests/test_assess.py` 把这两个案子连同"正常一轮不能被误伤"一起钉住。
+
+被隔离的轮次会**写进 `INDEX.md`**，不会悄悄消失：丢掉一张丑数据和不写一张假数据，是两件不同的错，
+前者至少要被看见。
 
 ## 为什么不直接看 CONNECT 状态码就完事
 

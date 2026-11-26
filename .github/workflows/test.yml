@@ -11,8 +11,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      # verdict() 是纯函数：不联网、不监听端口，所以这个 workflow 在任何 runner 上都能跑。
-      - name: verdict 回归测试
+      # 三个测试文件都是纯函数/纯本地：不联网、不监听端口，所以任何 runner 上都能跑。
+      # test_dercert 的两条用例需要 openssl + 一张本机自装根证书（/usr/local/share/ca-certificates），
+      # runner 上没有就 skip，不会红——但它们**在本机**是跑了的，这才是它们存在的意义。
+      - name: verdict 回归测试（分类器）
         run: python3 tests/test_verdict.py
+      - name: assess 回归测试（这张表能不能当证据）
+        run: python3 tests/test_assess.py
+      - name: dercert 回归测试（证书里谁签的）
+        run: python3 tests/test_dercert.py
       - name: 脚本能编译
-        run: python3 -m py_compile egress_matrix.py download_cap.py
+        run: python3 -m py_compile egress_matrix.py index_results.py dercert.py download_cap.py

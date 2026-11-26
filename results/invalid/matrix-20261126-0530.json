@@ -1,0 +1,1432 @@
+{
+ "generated_at": "2026-11-26T05:30:04+0800",
+ "proxy": null,
+ "host": "hcss-ecs-cada",
+ "rows": [
+  {
+   "host": "api.openai.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 169
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.anthropic.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 165
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "generativelanguage.googleapis.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 171
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.deepseek.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 172
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "dashscope.aliyuncs.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 154
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "open.bigmodel.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 160
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.moonshot.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 163
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "ark.cn-beijing.volces.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 151
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.siliconflow.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 161
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.minimax.chat",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 150
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "qianfan.baidubce.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 158
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "aip.baidubce.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 156
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.hunyuan.cloud.tencent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 156
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.together.xyz",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 6
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 196
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.groq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 1
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 197
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.mistral.ai",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 156
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "openrouter.ai",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 161
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.cohere.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 146
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.replicate.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 161
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "huggingface.co",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 150
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "inference.ai.azure.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 166
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "text.pollinations.ai/openai",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 163
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "models.github.ai/inference/chat/completions",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 161
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "pypi.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 153
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "files.pythonhosted.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 159
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "registry.npmjs.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 162
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "crates.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 166
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "proxy.golang.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 152
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "repo.maven.apache.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 152
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "registry-1.docker.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 175
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "ghcr.io",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 172
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "cdn.jsdelivr.net",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 180
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "unpkg.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 178
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "storage.googleapis.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 166
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "s3.amazonaws.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 157
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "github.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 159
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.github.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 160
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "raw.githubusercontent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 4
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 160
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "objects.githubusercontent.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 153
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "gitlab.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 152
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "gitee.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 166
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "dev.to",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 158
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "hashnode.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 164
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "juejin.cn",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 157
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "cnblogs.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 2
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 148
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "ifdian.net",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 124
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "api.telegram.org",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 114
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "smtp.qq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 109
+   },
+   "verdict": "DNS-FAIL"
+  },
+  {
+   "host": "imap.qq.com",
+   "dns": {
+    "ok": false,
+    "ips": [],
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "tcp": {
+    "ok": false,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution",
+    "ms": 0
+   },
+   "connect": {
+    "status": null,
+    "err": "no-proxy-configured"
+   },
+   "tls": {
+    "ok": false,
+    "issuer": null,
+    "err": "gaierror: [Errno -3] Temporary failure in name resolution"
+   },
+   "http": {
+    "status": null,
+    "err": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "ms": 52
+   },
+   "verdict": "DNS-FAIL"
+  }
+ ],
+ "valid": false,
+ "invalid_reason": [
+  "历史轮次补记：由 cron 拉起但 cron 不继承 http_proxy，proxy=None；本机直连路径无解析器（systemd-resolved 恒 SERVFAIL），49/49 DNS-FAIL。本轮只证明『没有代理时什么都测不到』，不代表任何端点的可达性。"
+ ]
+}
