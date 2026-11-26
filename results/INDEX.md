@@ -17,6 +17,7 @@
 | `20261125-1050` | 本机 cn-north-4a | 49 | 1 | 0 | 13 | 4 | 1 | 30 |  |
 | `20261125-1056` | GitHub runner | 49 | 0 | 0 | 0 | 6 | 1 | 39 | 3 |
 | `20261126-0214` | 本机 cn-north-4a | 49 | 1 | 0 | 9 | 4 | 1 | 34 |  |
+| `20261126-0226` | 本机 cn-north-4a | 49 | 1 | 0 | 12 | 4 | 1 | 31 |  |
 
 ## B. 同一主机、跨轮次的 CONNECT 判决（只列变过的；只用本机观测点的轮次）
 
@@ -24,12 +25,12 @@ CONNECT 是**代理层**的判决；它和「隧道内到底拿到了什么」�
 
 | 主机 | 各轮 CONNECT 判决 |
 |---|---|
-| `api.mistral.ai` | 20261125-0407:200 → 20261125-0642:200 → 20261125-0859:200 → 20261125-0935:200 → 20261125-0952:403 → 20261125-1050:200 → 20261126-0214:200 |
-| `api.openai.com` | 20261125-0407:403 → 20261125-0412:200 → 20261125-0642:200 → 20261125-0859:200 → 20261125-0935:200 → 20261125-0952:200 → 20261125-1050:200 → 20261126-0214:200 |
+| `api.mistral.ai` | 20261125-0407:200 → 20261125-0642:200 → 20261125-0859:200 → 20261125-0935:200 → 20261125-0952:403 → 20261125-1050:200 → 20261126-0214:200 → 20261126-0226:200 |
+| `api.openai.com` | 20261125-0407:403 → 20261125-0412:200 → 20261125-0642:200 → 20261125-0859:200 → 20261125-0935:200 → 20261125-0952:200 → 20261125-1050:200 → 20261126-0214:200 → 20261126-0226:200 |
 
 ## C. 同一端点、两个观测点（本机出口 vs GitHub runner）
 
-本机 `20261126-0214` vs runner `20261125-1056`，共 49 个共同端点，**11 个判决不同**。两个都用当前分类器重算，差异只可能来自出口，不可能来自代码。
+本机 `20261126-0226` vs runner `20261125-1056`，共 49 个共同端点，**14 个判决不同**。两个都用当前分类器重算，差异只可能来自出口，不可能来自代码。
 
 | 主机 | 本机出口 | GitHub runner |
 |---|---|---|
@@ -38,10 +39,13 @@ CONNECT 是**代理层**的判决；它和「隧道内到底拿到了什么」�
 | `api.openai.com` | HANG-IN-TUNNEL | REACHABLE |
 | `api.telegram.org` | HANG-IN-TUNNEL | REACHABLE |
 | `generativelanguage.googleapis.com` | HANG-IN-TUNNEL | EMPTY-REPLY |
+| `ghcr.io` | HANG-IN-TUNNEL | REACHABLE |
+| `github.com` | HANG-IN-TUNNEL | REACHABLE |
 | `gitlab.com` | HANG-IN-TUNNEL | REACHABLE |
 | `huggingface.co` | HANG-IN-TUNNEL | REACHABLE |
 | `imap.qq.com` | HANG-IN-TUNNEL | TLS-OR-HTTP-FAIL |
 | `inference.ai.azure.com` | PROXY-POLICY-DENY | DNS-FAIL |
+| `proxy.golang.org` | HANG-IN-TUNNEL | REACHABLE |
 | `registry-1.docker.io` | HANG-IN-TUNNEL | REACHABLE |
 | `smtp.qq.com` | HANG-IN-TUNNEL | TLS-OR-HTTP-FAIL |
 
